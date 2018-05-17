@@ -11,9 +11,7 @@ describe('Application launch', function () {
   before(function() {
     // アプリケーション
      app = new Application({
-      // Electronの実行ファイルまでのパス
       path: electronPath,
-      // electronを実行する際の引数
       args: [appPath]
     });
     return app.start()
