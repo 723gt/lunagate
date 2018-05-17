@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "node_modules/.bin/electron .",
+    "test": "mocha"
   },
   "repository": "https://github.com/723gt/lunagate",
   "keywords": [
@@ -17,6 +18,8 @@
   "author": "GitHub",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^2.0.0"
+    "electron": "^2.0.0",
+    "mocha": "^5.1.1",
+    "spectron": "^3.8.0"
   }
 }
