@@ -4,7 +4,7 @@ function drawVide(){
   navigator.webkitGetUserMedia({video: true, audio: false}, _handleSuccess, _handleError);
   function _handleSuccess(localMediaStream) {
     videoForm.src = window.URL.createObjectURL(localMediaStream);
-    videoForm.play();
+    //videoForm.play();
     drawTrack(videoForm);
   }
   
@@ -17,6 +17,8 @@ function drawTrack(videoForm){
   const trackForm = document.getElementById('trackForm');
   const ctracker = new clm.tracker();
   const cc = trackForm.getContext('2d');
+  let  img = new Image();
+  img.src = "../../../tmp/face.png";
   let flag = true
   ctracker.init(pModel);
   console.log(videoForm);
@@ -31,10 +33,14 @@ function drawTrack(videoForm){
 
   function drawLoop() {
     requestAnimationFrame(drawLoop);
-    var pos_array = ctracker.getCurrentPosition();
-    console.log(pos_array)
+    const pos_aaray = ctracker.getCurrentPosition();
+    const pos = pos_aaray[0];
     cc.clearRect(0, 0, trackForm.width, trackForm.height);
-    ctracker.draw(trackForm);
+    console.log(pos);
+    if(pos){
+      cc.drawImage(img,pos[0],pos[1]);
+      ctracker.draw(trackForm);
+    }
   }
   drawLoop();
 }
