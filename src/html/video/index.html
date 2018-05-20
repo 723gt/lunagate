@@ -7,11 +7,15 @@
     </title>
     <script src="../../javascript/lib/clmtrackr/clmtrackr.min.js"></script>
     <script src="../../javascript/lib/clmtrackr/model_pca_20_svm.js"></script>
+
+    <!-- stylesheet -->
+    <link href="../../stylesheet/application.css" rel="stylesheet">
+    <link href="../../stylesheet/video/video.css" rel="stylesheet">
   </head>
   <body onload="drawVide()">
-    <video id="videoForm" width="400" height="300" autoplay loop>
+    <video id="videoForm" class="videoForm" width="400" height="300" autoplay loop>
     </video>
-    <canvas id="trackForm" width="400" height="300" ></canvas>
+    <canvas id="trackForm" class="trackForm" width="400" height="300" ></canvas>
     <script src="../../javascript/video/video.js"></script>
  </body>
 </html>
