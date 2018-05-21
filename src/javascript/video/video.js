@@ -35,9 +35,12 @@ function drawTrack(videoForm){
     requestAnimationFrame(drawLoop);
     const pos_aaray = ctracker.getCurrentPosition();
     const pos = pos_aaray[0];
-    cc.clearRect(0, 0, trackForm.width, trackForm.height);
+    console.log(trackForm.width);
+    console.log(trackForm.height);
+
     console.log(pos);
     if(pos){
+      cc.clearRect(0, 0, trackForm.width, trackForm.height);
       cc.drawImage(img,pos[0],pos[1]);
       ctracker.draw(trackForm);
     }
